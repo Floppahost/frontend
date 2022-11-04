@@ -18,7 +18,7 @@ const Hero = () => {
         </div>
         <p className="pt-2 max-w-xl">
           Floppa.host let you upload your files safely and has amazing features.
-          You can customize your URL, modify Discord's Embed and much more!
+          You can customize your URL, modify {"Discord's"} Embed and much more!
         </p>
         <div className="flex gap-2 pt-2">
           <Button color="danger">Login</Button>
