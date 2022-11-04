@@ -26,10 +26,10 @@ const Header = () => {
 
         <div className="flex gap-2">
           <Link href="/">
-            <Button>Register</Button>
+            <Button size="md">Register</Button>
           </Link>
           <Link href="/">
-            <Button>Login</Button>
+            <Button size="md">Login</Button>
           </Link>
         </div>
       </section>

@@ -25,7 +25,7 @@ const Button = (props: props) => {
         setH("h-12");
         break;
       default:
-        setH("h-8");
+        setH("h-10");
     }
     switch (props.color) {
       case "success":
