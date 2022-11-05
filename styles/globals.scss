@@ -2,12 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+$background: #111;
+$foreground: #f8f8f8;
 html,
 body {
-  color: #e1e1e6;
-  background-color: #121214;
+  background-color: $background;
+  color: $foreground;
   padding: 0;
   margin: 0;
+  font-family: Montserrat, sans-serif;
 }
 
 a {
@@ -17,4 +20,9 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.hero-gradient {
+  background: #111111;
+  background: radial-gradient(circle, rgba(105,105,105,1) 0%, rgba(17,17,17,1) 50%, rgba(17,17,17,1) 100%); 
 }
