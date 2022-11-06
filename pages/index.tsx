@@ -26,7 +26,7 @@ const Home = () => {
               </h1>
               <p className="max-w-4xl text-center pt-1 text-2xl text-white/70">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                pretium porta elementum. Mauris posuere nisi ex, nec{" "}
+                pretium porta elementum. Mauris posuere nisi ex, nec
               </p>
 
               <div className="flex gap-12 pt-5 justify-center">

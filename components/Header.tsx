@@ -13,7 +13,7 @@ const Header = () => {
   }, []);
   return (
     <nav
-      className={`sticky top-0 h-14 bg-background/50 z-[10] flex items-center border-b-2 border-black  ${border}`}
+      className={`sticky top-0 h-14 bg-background/50 z-[10] flex items-center border-b-2 border-black ${border}`}
     >
       <div className="container mx-auto flex justify-between">
         <Link href="/">
@@ -27,7 +27,7 @@ const Header = () => {
           <li className="text-foreground/60">Features</li>
         </ul>
 
-        <button className="bg-raisin-black text-foreground/60 h-8 rounded px-6 hover:bg-raisin-black/80 transition-colors duration-300 font-bold">
+        <button className="border border-cg-blue text-foreground/60 h-8 rounded px-6 hover:bg-cg-blue transition-colors duration-300 font-bold">
           Login
         </button>
       </div>
