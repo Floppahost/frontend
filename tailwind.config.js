@@ -10,11 +10,11 @@ module.exports = {
       colors: {
         "venetian-red": "#C20114",
         "cg-blue": "#247BA0",
-        "background": "#111111",
-        "foreground": "#F8F8F8",
-        "raisin-black": "#202030"
+        background: "#000",
+        foreground: "#F8F8F8",
+        "raisin-black": "#202030",
       },
     },
   },
   plugins: [],
-}
+};
