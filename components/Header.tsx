@@ -28,7 +28,7 @@ const Header = () => {
         </ul>
 
         <button className="border border-cg-blue text-foreground/60 h-8 rounded px-6 hover:bg-cg-blue transition-colors duration-300 font-bold">
-          Renamed this btn to try out commits
+          Login
         </button>
       </div>
     </nav>
