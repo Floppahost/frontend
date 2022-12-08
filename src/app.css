@@ -5,3 +5,7 @@
 :root {
   background-color: #191621;
 }
+
+.main {
+  background-image: url("/shape.svg");
+}

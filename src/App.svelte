@@ -3,4 +3,6 @@
   import { routes } from "./routes";
 </script>
 
-<Router {routes} />
+<div class="text-white">
+  <Router {routes} />
+</div>
