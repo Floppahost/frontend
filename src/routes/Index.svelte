@@ -1,5 +1,6 @@
 <script>
-    import { ZapIcon } from "svelte-feather-icons";
+    import { HelpCircleIcon } from "svelte-feather-icons";
+    import { blur } from "svelte/transition";
 </script>
 
 <div class="flex h-screen main bg-center bg-no-repeat bg-contain">
@@ -8,20 +9,17 @@
             src="/logo.gif"
             class="drop-shadow-md mx-auto my-auto w-96"
             alt="logo"
+            in:blur
         />
-        <div class="grid grid-cols-3 gap-2 justify-items-center">
-            <div class="p-3 flex">
-                <ZapIcon class="my-auto" />
-                <p class="pl-2 font-bold my-auto text-2xl">Fast</p>
-            </div>
-            <div class="p-3 flex">
-                <ZapIcon class="my-auto" />
-                <p class="pl-2 font-bold my-auto text-2xl">Fast</p>
-            </div>
-            <div class="p-3 flex">
-                <ZapIcon class="my-auto" />
-                <p class="pl-2 font-bold my-auto text-2xl">Fast</p>
-            </div>
+        <div class="font-mono text-left w-1/2 mx-auto">
+            <p class="flex text-2xl font-bold">
+                <HelpCircleIcon class="my-auto mr-2" />
+                'bout flop host :)
+            </p>
+            <p>
+                Floppa.host is an image host made to be really fast and
+                reliable. There's been a lot of people behind this project.
+            </p>
         </div>
     </div>
 </div>
