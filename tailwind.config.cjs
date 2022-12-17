@@ -5,7 +5,11 @@ module.exports = {
     "./src/**/*.{js,svelte}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "default": "IBM Plex Sans, sans-serif"
+      }
+    },
   },
   plugins: [],
 }

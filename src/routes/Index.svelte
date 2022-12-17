@@ -11,25 +11,31 @@
             alt="logo"
             in:blur
         />
-        <div class="font-mono text-left w-1/2 mx-auto">
-            <p class="flex text-2xl font-bold">
-                <HelpCircleIcon class="my-auto mr-2" />
-                what color is your bugatti
-            </p>
-            <p>
-                Floppa.host is an image host made to be really fast and
-                reliable. There's been a lot of people behind this project,
-                meaning there is a lot of support given to our project.
-            </p>
-            <div class="grid grid-cols-2 w-max mx-auto text-center">
+        <div class="text-left w-1/2 mx-auto">
+            <div class="flex">
+                <p class="text-3xl font-bold">About us</p>
+            </div>
+            <div class="flex">
+                <div class="w-12 h-auto mx-auto">
+                    <div class="w-px h-full bg-white mx-auto" />
+                </div>
+                <p class="font-normal text-sm">
+                    Established in 2022, image hosting service that is reliable,
+                    fast and trustworthy. Made by a few young coders who spent
+                    their free time to code this service. <b
+                        >Registration requires an invitation code.</b
+                    >
+                </p>
+            </div>
+            <div class="grid grid-cols-2 w-max mx-auto text-center text-bold">
                 <a
                     href="#/login"
-                    class="rounded-full border border-cyan-400 py-1 px-4 m-2"
+                    class="text-sm rounded-full border border-cyan-400 py-px px-4 m-2"
                     >Login</a
                 >
                 <a
                     href="#/register"
-                    class="rounded-full border border-cyan-400 py-1 px-4 m-2"
+                    class="text-sm rounded-full border border-cyan-400 py-px px-4 m-2"
                     >Register</a
                 >
             </div>
