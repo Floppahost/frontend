@@ -14,7 +14,7 @@
         <div class="font-mono text-left w-1/2 mx-auto">
             <p class="flex text-2xl font-bold">
                 <HelpCircleIcon class="my-auto mr-2" />
-                'bout flop host :)
+                e wizard
             </p>
             <p>
                 Floppa.host is an image host made to be really fast and
