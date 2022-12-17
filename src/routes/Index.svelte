@@ -18,7 +18,7 @@
             </p>
             <p>
                 Floppa.host is an image host made to be really fast and
-                reliable. There's been a lot of people behind this project.
+                reliable. There's been a lot of people behind this project, meaning there is a lot of support given to our project.
             </p>
         </div>
     </div>
