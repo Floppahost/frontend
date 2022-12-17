@@ -24,12 +24,12 @@
             <div class="grid grid-cols-2 w-max mx-auto text-center">
                 <a
                     href="#/login"
-                    class="rounded-full border border-orange-600 h-8 px-4 m-2"
+                    class="rounded-full border border-orange-600 py-1 px-4 m-2"
                     >Login</a
                 >
                 <a
                     href="#/register"
-                    class="rounded-full border border-orange-600 h-8 px-4 m-2"
+                    class="rounded-full border border-orange-600 py-1 px-4 m-2"
                     >Register</a
                 >
             </div>
