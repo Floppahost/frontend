@@ -19,26 +19,22 @@
                 <div class="w-12 h-auto mx-auto">
                     <div class="w-px h-full bg-white mx-auto" />
                 </div>
-                <p class="font-normal text-sm">
-                    Established in 2022, image hosting service that is reliable,
-                    fast and trustworthy. Made by a few young coders who spent
-                    their free time to code this service. <b
-                        >Registration requires an invitation code.</b
-                    >
-                </p>
+                <form method="post" class="space-y-2 my-2">
+                    <input
+                        class="w-auto outline-none border border-white bg-transparent px-2 py-px text-sm"
+                        placeholder="Name"
+                    />
+                    <input
+                        class="w-full outline-none border border-white bg-transparent px-2 py-px text-sm"
+                        placeholder="Password"
+                    />
+                </form>
             </div>
-            <div class="grid grid-cols-2 w-max mx-auto text-center text-bold">
-                <a
-                    href="#/login"
-                    class="text-sm rounded-full border border-cyan-400 py-px px-4 m-2"
-                    >Login</a
-                >
-                <a
-                    href="#/register"
-                    class="text-sm rounded-full border border-cyan-400 py-px px-4 m-2"
-                    >Register</a
-                >
-            </div>
+            <a
+                href="#/login"
+                class="w-max text-sm rounded-full border border-cyan-400 py-px px-4 m-2"
+                >Login</a
+            >
         </div>
     </div>
 </div>
