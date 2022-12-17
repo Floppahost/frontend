@@ -13,7 +13,7 @@
         />
         <div class="text-left sm:w-1/2 w-80 mx-auto">
             <div class="flex">
-                <p class="text-3xl font-bold">Log in</p>
+                <p class="text-3xl font-bold mx-auto">Log in</p>
             </div>
             <div class="flex">
                 <div class="w-12 h-auto mx-auto">
