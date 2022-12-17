@@ -29,7 +29,7 @@
                 >
                 <a
                     href="#/register"
-                    class="rounded-full border border-cyan-400 h-8 px-4 m-2"
+                    class="rounded-full border border-cyan-400 py-1 px-4 m-2"
                     >Register</a
                 >
             </div>
