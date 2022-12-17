@@ -11,7 +11,7 @@
             alt="logo"
             in:blur
         />
-        <div class="text-left w-1/2 mx-auto">
+        <div class="text-left sm:w-1/2 w-80 mx-auto">
             <div class="flex">
                 <p class="text-3xl font-bold">Log in</p>
             </div>
