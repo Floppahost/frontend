@@ -1,9 +1,27 @@
-<div class="grid grid-cols-2 w-max mx-auto">
-    <div class="absolute flex h-auto">
-        <a class="text-sm rounded border border-cyan-400" href="#/">Index</a>
-        <a class="text-sm rounded border border-cyan-400" href="#/register">Register</a>
-        <a class="text-sm rounded border border-cyan-400" href="#/login">Login</a>
-        <a class="text-sm rounded border border-cyan-400" href="https://discord.gg/MEeam8nZRp">Discord</a>
+<div
+    class="flex justify-center items-center p-4 absolute m-auto left-0 right-0"
+>
+    <div class="space-x-2">
+        <a
+            href="/"
+            class="text-sm rounded-full border border-cyan-400 py-px px-4"
+            >Home</a
+        >
+        <a
+            href="#/login"
+            class="text-sm rounded-full border border-cyan-400 py-px px-4"
+            >Login</a
+        >
+        <a
+            href="#/register"
+            class="text-sm rounded-full border border-cyan-400 py-px px-4"
+            >Register</a
+        >
+        <a
+            href="#/discord"
+            class="text-sm rounded-full border border-cyan-400 py-px px-4"
+            >Discord</a
+        >
     </div>
 </div>
 <slot />
