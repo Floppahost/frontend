@@ -4,12 +4,8 @@
   import Header from "./lib/Header.svelte";
 </script>
 
-
 <div class="text-white font-default">
-  <slot>
-    <Router {routes}>
-  <Header>hi</Header>
-</Router>
-</slot>
+  <Header>
+    <Router {routes} />
+  </Header>
 </div>
-
