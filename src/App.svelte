@@ -1,11 +1,11 @@
 <script>
   import Router from "svelte-spa-router";
   import { routes } from "./routes";
-  import Header from "./lib/Header.svelte"
+  import Header from "./lib/Header.svelte";
 </script>
 
 <div class="text-white font-default">
-  <Router {routes} />
+  <Header>
+    <Router {routes} />
+  </Header>
 </div>
-
-<Header>x fix onle</Header>
