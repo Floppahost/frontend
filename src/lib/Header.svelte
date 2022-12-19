@@ -1,7 +1,7 @@
 <div
     class="flex justify-center items-center p-4 absolute m-auto left-0 right-0"
 >
-    <img src="/logo.gif" class="w-12 mr-4" alt="logo" />
+    <img src="/logo.gif" class="w-12 mr-4 sm:block hidden" alt="logo" />
     <div class="space-x-2">
         <a
             href="/"

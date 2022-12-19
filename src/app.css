@@ -5,8 +5,8 @@
 
 :root {
   background-color: #191621;
-}
-
-.main {
   background-image: url("/shape.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }

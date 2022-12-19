@@ -1,9 +1,8 @@
 <script>
-    import { HelpCircleIcon } from "svelte-feather-icons";
     import { blur } from "svelte/transition";
 </script>
 
-<div class="flex h-screen main bg-center bg-no-repeat bg-contain">
+<div class="flex h-screen">
     <div class="m-auto">
         <img
             src="/logo.gif"

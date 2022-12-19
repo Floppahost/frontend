@@ -1,35 +1,29 @@
-<script>
-    import { UserIcon } from "svelte-feather-icons";
-</script>
-
-<div class="flex min-h-screen main bg-center bg-no-repeat bg-contain">
-    <div class="m-auto">
-        <div class="bg-cyan-400 rounded-lg">
-        <div class="font-mono px-8 w-max mx-auto">
-                <UserIcon class="w-max mx-auto" size="65" />
-                <p class="font-bold">
-                Welcome, $username
-                </p>
-                <p class="w-max mx-auto">
-                UID: $uid
-                </p>
+<div class="flex h-screen">
+    <div class="m-auto sm:w-1/3 w-full">
+        <div class="grid sm:grid-cols-2 grid-cols-1 gap-4 w-full mx-auto">
+            <div class="backdrop-blur-lg bg-cyan-400/10 p-4 rounded-3xl">
+                <div class="flex">
+                    <p class="text-3xl font-bold">barius</p>
+                </div>
+                <div class="flex">
+                    <div class="h-auto">
+                        <div class="ml-2 w-px h-full bg-white" />
+                    </div>
+                    <div class="flex">
+                        <div class="w-4 h-px bg-white my-auto mr-2" />
+                        <p>uid: <b>1</b>, registered <b>a moment ago</b></p>
+                    </div>
+                </div>
+                <div class="space-x-2 mt-1">
+                    <button class="text-sm rounded-full bg-[#191621] py-px px-4"
+                        >Reset password
+                    </button>
+                    <button class="text-sm rounded-full bg-[#191621] py-px px-4"
+                        >idk
+                    </button>
+                </div>
             </div>
-        </div>
-            <div class="flex screen h-32 main">
-            <div class="m-auto bg-cyan-400 rounded-lg">
-                <div class="font-mono w-max mx-auto">
-                <a
-                    href="#/getconfig"
-                    class="text-sm rounded-full border border-cyan-400 py-px px-4 m-2 font-bold"
-                    >Download Config</a
-                >
-                <a
-                href="#/embed"
-                class="text-sm rounded-full border border-cyan-400 py-px px-4 m-2 font-bold"
-                >Embed Settings</a
-            >
-            </div>
-        </div>
-            </div>
+            <div class="backdrop-blur-lg bg-cyan-400/10 p-4 rounded-3xl">a</div>
         </div>
     </div>
+</div>

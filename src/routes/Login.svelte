@@ -2,7 +2,7 @@
     import { blur } from "svelte/transition";
 </script>
 
-<div class="flex h-screen main bg-center bg-no-repeat bg-contain">
+<div class="flex h-screen">
     <div class="m-auto p-4">
         <img
             src="/logo.gif"
