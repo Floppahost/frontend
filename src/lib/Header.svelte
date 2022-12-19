@@ -19,7 +19,7 @@
             >Register</a
         >
         <a
-            href="#/discord"
+            href="https://discord.gg/MEeam8nZRp"
             class="text-sm rounded-full border border-cyan-400 py-px px-4"
             >Discord</a
         >
