@@ -16,6 +16,10 @@
                 class="text-white w-80 bg-transparent border border-cyan-400 outline-none text-sm px-2 py-1"
             />
             <input
+                placeholder="Email"
+                class="text-white w-80 bg-transparent border border-cyan-400 outline-none text-sm px-2 py-1"
+            />
+            <input
                 placeholder="Password"
                 class="text-white w-80 bg-transparent border border-cyan-400 outline-none text-sm px-2 py-1"
             />
