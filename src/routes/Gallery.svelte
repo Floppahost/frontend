@@ -1,19 +1,17 @@
-<script>
-    import Image from "../lib/Image.svelte";
-</script>
-
 <div class="grid w-max min-h-screen m-auto">
-    <div class="m-auto rounded border border-cyan-400 text-sm ">
+    <div class="m-auto rounded-none border border-cyan-400 text-sm ">
         <p><b>barius's</b> images</p>
     </div>
     <div
-        class="m-auto rounded-lg grid grid-cols-2 text-sm border space-x-1 w-max border-cyan-400"
+        class="m-auto rounded-none grid grid-cols-2 text-sm border mt-8 md:w-96 border-cyan-400"
     >
-        <Image
-            src="https://deelay.me/1000/https://icon-library.com/images/document-icon/document-icon-15.jpg"
-        />
-        <Image
-            src="https://deelay.me/1000/https://icon-library.com/images/document-icon/document-icon-15.jpg"
+        <!-- svelte-ignore a11y-missing-attribute -->
+        <img
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Big_Floppa_and_Justin_2_%28cropped%29.jpg/1200px-Big_Floppa_and_Justin_2_%28cropped%29.jpg"
+         />
+        <!-- svelte-ignore a11y-missing-attribute -->
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Big_Floppa_and_Justin_2_%28cropped%29.jpg/1200px-Big_Floppa_and_Justin_2_%28cropped%29.jpg"
         />
     </div>
 </div>
