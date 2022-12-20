@@ -16,14 +16,25 @@
                 </div>
                 <div class="space-x-2 mt-1">
                     <button class="text-sm rounded-full bg-[#191621] py-px px-4"
-                        >Reset password
+                        >Download config
                     </button>
                     <button class="text-sm rounded-full bg-[#191621] py-px px-4"
-                        >idk
+                        >Reset password
                     </button>
                 </div>
             </div>
-            <div class="backdrop-blur-lg bg-cyan-400/10 p-4 rounded-3xl">a</div>
+            <div class="backdrop-blur-lg bg-cyan-400/10 p-4 rounded-3xl space-y-4">
+                <b>Your upload key:</b>
+                <div class="blur hover:blur-none">
+                    69696969696969696969696969
+                </div>
+                <button class="text-sm rounded-full bg-[#191621] py-px px-4"
+                    >Invites
+                </button>
+                <a class="text-sm rounded-full bg-[#191621] py-px px-4" href="#/gallery"
+                    >Gallery
+                </a>
+            </div>
         </div>
     </div>
 </div>
