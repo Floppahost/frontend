@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="backdrop-blur-lg bg-cyan-400/10 p-4 rounded-3xl space-y-4">
-                <b>Your upload key:</b>
+                <b class="text-3xl">Your upload key:</b>
                 <div class="blur hover:blur-none">
                     69696969696969696969696969
                 </div>
