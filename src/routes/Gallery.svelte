@@ -1,23 +1,36 @@
-<div class="grid w-max min-h-screen m-auto">
-    <div class="m-auto rounded-none border border-cyan-400 text-sm ">
-        <p><b>barius's</b> images</p>
-    </div>
-    <div
-        class="indent-1 m-auto rounded-none grid grid-cols-2 text-sm border mt-8 md:w-96 border-cyan-400"
-    >
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <img
-         src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Big_Floppa_and_Justin_2_%28cropped%29.jpg/1200px-Big_Floppa_and_Justin_2_%28cropped%29.jpg"
-         />
-         <p class="inline">
-            <b>Uploaded at</b>: NPC
-         </p>
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Big_Floppa_and_Justin_2_%28cropped%29.jpg/1200px-Big_Floppa_and_Justin_2_%28cropped%29.jpg"
-        />
-        <p class="inline">
-            <b>Uploaded at</b>: NPC
-        </p>
+<div class="flex h-screen">
+    <div class="m-auto sm:w-1/3 w-full">
+        <div class="grid sm:grid-cols-2 grid-cols-1 gap-4 w-full mx-auto">
+            <div class="backdrop-blur-lg bg-cyan-400/10 p-4 rounded-3xl h-auto">
+                <div class="flex space-x-2">
+                    <img
+                        src="https://i.imgur.com/QD4KnPZ.jpeg"
+                        alt="peterhook.png"
+                        class="w-24 rounded-lg"
+                    />
+                    <div class="my-auto">
+                        <p class="text-2xl font-bold">peterhook.png</p>
+                        <p>
+                            Uploaded by <b>barius</b> at <b>19:01:06</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="backdrop-blur-lg bg-cyan-400/10 p-4 rounded-3xl h-auto">
+                <div class="flex space-x-2">
+                    <img
+                        src="https://i.imgur.com/QD4KnPZ.jpeg"
+                        alt="peterhook.png"
+                        class="w-24 rounded-lg"
+                    />
+                    <div class="my-auto">
+                        <p class="text-2xl font-bold">peterhook.png</p>
+                        <p>
+                            Uploaded by <b>barius</b> at <b>19:01:06</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
