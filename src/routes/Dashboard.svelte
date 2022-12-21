@@ -14,8 +14,8 @@
                         <p>uid: <b>1</b>, registered <b>a moment ago</b></p>
                     </div>
                 </div>
-                <div class="space-x-2 mt-1">
-                    <button class="text-sm rounded-full bg-[#191621] py-px px-4"
+                <div class="space-x-2">
+                    <button class="text-sm rounded-full bg-[#191621] py-px px-4 ml-2"
                         >Download config
                     </button>
                     <button class="text-sm rounded-full bg-[#191621] py-px px-4"
