@@ -7,10 +7,10 @@
                 </div>
                 <div class="flex">
                     <div class="h-auto">
-                        <p>Idk what to put here kill me pls</p>
+                        <p>Admin ID: <b>1</b></p>
                     </div>
                 </div>
-                <p>I am noob help me</p>
+                <p>Logged in as <b>barius</b></p>
             </div>
                 <div class="backdrop-blur-lg bg-cyan-400/10 p-4 rounded-3xl space-y-4">
                     <b class="text-3xl">Blacklist A User</b>
@@ -40,16 +40,20 @@
             </div>
             <div class="backdrop-blur-lg bg-cyan-400/10 p-4 rounded-3xl">
                 <div class="flex">
-                    <p class="text-3xl font-bold">Floppa host is pasted</p>
+                    <p class="text-3xl font-bold">Tools</p>
                 </div>
                 <div class="flex">
-                    <div class="h-auto">
-                        <p>I lack coding skills</p>
+                    <div class="h-auto pb-8">
+                        <p>Press the button to iniatiate an action</p>
                     </div>
                 </div>
                 <button
                     class="text-white w-70 rounded-lg bg-cyan-400 outline-none text-sm px-2 font-bold py-1"
                     >Invite Wave</button
+                >
+                <button
+                    class="text-white w-70 rounded-lg bg-cyan-400 outline-none text-sm px-2 font-bold py-1"
+                    >Delete db</button
                 >
             </div>
         </div>
