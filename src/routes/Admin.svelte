@@ -44,7 +44,7 @@
                 </div>
                 <div class="flex">
                     <div class="h-auto pb-8">
-                        <p>Press the button to iniatiate an action</p>
+                        <p>Press the button to initiate an action</p>
                     </div>
                 </div>
                 <button
