@@ -26,18 +26,6 @@
                     >
                 </p>
             </div>
-            <div class="grid grid-cols-2 w-max mx-auto text-center text-bold">
-                <a
-                    href="#/login"
-                    class="text-sm rounded-full border border-cyan-400 py-px px-4 m-2"
-                    >Login</a
-                >
-                <a
-                    href="#/register"
-                    class="text-sm rounded-full border border-cyan-400 py-px px-4 m-2"
-                    >Register</a
-                >
-            </div>
         </div>
     </div>
 </div>

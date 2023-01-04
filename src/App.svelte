@@ -20,7 +20,7 @@
 
 <div class="text-white font-default mx-2">
   <Header>
-    {#if status == 202}
+    {#if status != 202}
       <Router {routes} />
     {:else}
       <AccessDenied />
