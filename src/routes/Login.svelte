@@ -1,4 +1,5 @@
 <script>
+    import { UnlockIcon } from "svelte-feather-icons";
     import { blur } from "svelte/transition";
 </script>
 
@@ -20,9 +21,12 @@
                 class="text-white w-80 bg-transparent border border-cyan-400 outline-none text-sm px-2 py-1"
             />
             <button
-                class="text-white w-80 bg-cyan-400 outline-none text-sm px-2 font-bold py-1"
-                >Log in</button
+                class="flex text-white w-80 bg-cyan-400 outline-none text-sm px-2 font-semibold py-1 my-auto"
             >
+                <div class="flex mx-auto">
+                    <UnlockIcon size="18" /><span class="pl-2">Log in</span>
+                </div>
+            </button>
         </form>
     </div>
 </div>
