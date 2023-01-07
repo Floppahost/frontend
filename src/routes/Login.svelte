@@ -7,7 +7,7 @@
     import { blur } from "svelte/transition";
 
     let form = {};
-    $: response = { status: null };
+    let response = {};
 
     async function login() {
         let call = await fetch("/login", {
