@@ -7,14 +7,13 @@ import File from "./routes/File.svelte";
 import Admin from "./routes/Admin.svelte";
 import NotFound from "./routes/NotFound.svelte";
 
-
 export const routes = {
-    '/': Index,
-    '/login': Login,
-    '/register': Register,
-    '/dashboard': Dashboard,
-    '/gallery': Gallery,
-    '/file': File,
-    '/admin': Admin,
-    '*': NotFound
-}
+  "/": Index,
+  "/login": Login,
+  "/register": Register,
+  "/dashboard": Dashboard,
+  "/gallery": Gallery,
+  "/file/:handle": File,
+  "/admin": Admin,
+  "*": NotFound,
+};
