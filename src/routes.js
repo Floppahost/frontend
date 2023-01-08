@@ -4,6 +4,7 @@ import Register from "./routes/Register.svelte";
 import Dashboard from "./routes/Dashboard.svelte";
 import Gallery from "./routes/Gallery.svelte";
 import File from "./routes/File.svelte";
+import Change_Password from "./routes/Change-Password.svelte";
 import Admin from "./routes/Admin.svelte";
 import NotFound from "./routes/NotFound.svelte";
 
@@ -14,6 +15,7 @@ export const routes = {
   "/dashboard": Dashboard,
   "/gallery": Gallery,
   "/file/:handle": File,
+  "/change-password": Change_Password,
   "/admin": Admin,
   "*": NotFound,
 };

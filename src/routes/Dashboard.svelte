@@ -9,10 +9,11 @@
                 <div class="flex">
                     <UserIcon size="24" class="my-auto" />
                     <p class="pl-2 text-3xl font-bold">Account</p>
-                    <button
+                    <a
+                    href={"#/change-password"}
                         class="text-sm rounded-full bg-[#191621] py-px px-4 ml-2 my-auto"
                         >Reset password
-                    </button>
+                </a>
                 </div>
                 <div class="flex">
                     <div class="h-auto">

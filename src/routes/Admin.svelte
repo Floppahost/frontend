@@ -53,7 +53,7 @@
                 >
                 <button
                     class="text-white w-70 rounded-lg bg-cyan-400 outline-none text-sm px-2 font-bold py-1"
-                    >Delete db</button
+                    >Wipe Invites</button
                 >
             </div>
         </div>

@@ -10,3 +10,7 @@
   background-size: contain;
   background-position: center;
 }
+
+.close-modal-btn:hover {
+  background-color: #373737;
+}
