@@ -11,12 +11,12 @@ let newPassword = ""
             <button on:click={()=>isModalOpen = true}>hello</button>
             <Modal onClose={()=>isModalOpen = false} isOpen={isModalOpen} title={"Reset your password"}>
            <div class="flex flex-col gap-2">
-            <input
+            <input type="password"
             placeholder="Old password"
             class="text-white w-80 bg-transparent border border-cyan-400 outline-none text-sm px-2 py-1"
             bind:value={oldPassword}
             />
-            <input
+            <input type="password"
             placeholder="New password"
             class="text-white w-80 bg-transparent border border-cyan-400 outline-none text-sm px-2 py-1"
             bind:value={newPassword}
