@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "svelte-feather-icons": "^4.0.0",
-    "svelte-spa-router": "^3.3.0"
+    "svelte-spa-router": "^3.3.0",
+    "tw-elements": "^1.0.0-alpha13"
   }
 }
