@@ -4,7 +4,7 @@ import Register from "./routes/Register.svelte";
 import Dashboard from "./routes/Dashboard.svelte";
 import Gallery from "./routes/Gallery.svelte";
 import File from "./routes/File.svelte";
-import Change_Password from "./routes/Change-Password.svelte";
+import Change_Password from "./routes/ChangePassword.svelte";
 import Admin from "./routes/Admin.svelte";
 import NotFound from "./routes/NotFound.svelte";
 
