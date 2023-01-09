@@ -48,24 +48,32 @@
             on:submit|preventDefault={register}
         >
             <input
+                type="text"
                 placeholder="Name"
                 class="text-white w-80 bg-transparent border border-cyan-400 outline-none text-sm px-2 py-1"
                 bind:value={form.name}
+                required
             />
             <input
+                type="email"
                 placeholder="Email"
                 class="text-white w-80 bg-transparent border border-cyan-400 outline-none text-sm px-2 py-1"
                 bind:value={form.email}
+                required
             />
             <input
+                type="password"
                 placeholder="Password"
                 class="text-white w-80 bg-transparent border border-cyan-400 outline-none text-sm px-2 py-1"
                 bind:value={form.password}
+                required
             />
             <input
+                type="text"
                 placeholder="Invitation code"
                 class="text-white w-80 bg-transparent border border-cyan-400 outline-none text-sm px-2 py-1"
                 bind:value={form.invite}
+                required
             />
             <button
                 class="flex text-white w-80 bg-cyan-400 outline-none text-sm px-2 font-semibold py-1 my-auto"

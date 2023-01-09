@@ -1,7 +1,7 @@
 <script>
   import Router from "svelte-spa-router";
   import { routes } from "./routes";
-  import Header from "./lib/Header.svelte";
+  import Header from "./components/Header.svelte";
   import { onMount } from "svelte";
   import AccessDenied from "./routes/AccessDenied.svelte";
 

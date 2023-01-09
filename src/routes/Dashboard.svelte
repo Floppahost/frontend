@@ -1,92 +1,62 @@
 <script>
-    import { UserIcon, KeyIcon } from "svelte-feather-icons";
+    import Card from "../components/Card.svelte"
+    import Modal from "../components/Modal.svelte";
 
-    let form = {};
+    let form = {embed: {}, file: {}, password: {}}
+
+    let embed, file, password;
+
+    async function changeEmbedSettings() {
+        //kroks's work
+    }
+
+    async function deleteFile() {
+        //kroks's work
+    }
+
+    async function changePassword() {
+        //kroks's work
+    }
 </script>
 
+<Modal title="Change embed" open={embed}>
+    <form method="post" class="grid grid-cols-1 gap-y-2 text-sm mt-1 w-80" on:submit|preventDefault={changeEmbedSettings}>
+        <input type="text" placeholder="Site name" class="bg-transparent border border-cyan-400 outline-none px-2 py-1" bind:value={form.embed.sitename} />
+        <input type="text" placeholder="Site name URL" class="bg-transparent border border-cyan-400 outline-none px-2 py-1" bind:value={form.embed.sitenameurl} />
+        <input type="text" placeholder="Author" class="bg-transparent border border-cyan-400 outline-none px-2 py-1" bind:value={form.embed.author} />
+        <input type="text" placeholder="Author URL" class="bg-transparent border border-cyan-400 outline-none px-2 py-1" bind:value={form.embed.authorurl} />
+        <input type="text" placeholder="Title" class="bg-transparent border border-cyan-400 outline-none px-2 py-1" bind:value={form.embed.title} />
+        <input type="text" placeholder="Description" class="bg-transparent border border-cyan-400 outline-none px-2 py-1" bind:value={form.embed.description} />
+        <button type="submit" class="bg-cyan-400 text-sm px-2 font-semibold py-1 my-auto">Change embed</button>
+    </form>
+</Modal>
+
+<Modal title="Delete a file" open={file}>
+    <form method="post" class="grid grid-cols-1 gap-y-2 text-sm mt-1 w-80" on:submit|preventDefault={deleteFile}>
+        <input type="text" placeholder="File" class="bg-transparent border border-cyan-400 outline-none px-2 py-1" bind:value={form.file.name} />
+        <button type="submit" class="bg-cyan-400 text-sm px-2 font-semibold py-1 my-auto">Delete a file</button>
+    </form>
+</Modal>
+
+<Modal title="Change password" open={password}>
+    <form method="post" class="grid grid-cols-1 gap-y-2 text-sm mt-1 w-80" on:submit|preventDefault={changePassword}>
+        <input type="password" placeholder="Old password" class="bg-transparent border border-cyan-400 outline-none px-2 py-1" bind:value={form.password.old} />
+        <input type="password" placeholder="New password" class="bg-transparent border border-cyan-400 outline-none px-2 py-1" bind:value={form.password.new} />
+        <button type="submit" class="bg-cyan-400 text-sm px-2 font-semibold py-1 my-auto">Change password</button>
+    </form>
+</Modal>
+
 <div class="flex h-screen">
-    <div class="m-auto sm:w-1/3 w-full">
+    <div class="m-auto md:w-4/5 xl:w-1/3 w-full">
         <div class="grid sm:grid-cols-2 grid-cols-1 gap-4 w-full mx-auto">
-            <div class="backdrop-blur-lg bg-black/25 p-4 rounded-3xl">
-                <div class="flex">
-                    <UserIcon size="24" class="my-auto" />
-                    <h1 class="pl-2 text-3xl font-bold">Account</h1>
-                    <div class="my-auto">
-                        <a
-                            href="#/change-password"
-                            class="text-sm rounded-full bg-[#191621] px-4 ml-2 my-auto"
-                            data-bs-toggle="modal"
-                            data-bs-target="#resetpassword"
-                        >
-                            Reset password
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="backdrop-blur-lg bg-black/25 p-4 rounded-3xl">
-                <div class="flex">
-                    <UserIcon size="24" class="my-auto" />
-                    <h1 class="pl-2 text-3xl font-bold">Account</h1>
-                    <div class="my-auto">
-                        <a
-                            href="#/change-password"
-                            class="text-sm rounded-full bg-[#191621] px-4 ml-2 my-auto"
-                            >Reset password
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div
-    class="modal backdrop-blur fixed top-0 left-0 hidden w-full h-full"
-    id="resetpassword"
-    tabindex="-1"
-    data-bs-backdrop="static"
-    aria-hidden="true"
->
-    <div
-        class="modal-dialog modal-dialog-centered relative w-auto pointer-events-none"
-    >
-        <div class="backdrop-blur-lg bg-black/25 p-4 rounded-3xl mx-auto">
-            <div class="flex">
-                <KeyIcon size="24" class="my-auto" />
-                <h1 class="pl-2 text-3xl font-bold">Reset password</h1>
-                <button
-                    type="button"
-                    class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
-                    data-bs-dismiss="modal">Close</button
-                >
-            </div>
-            <form
-                method="post"
-                class="grid grid-cols-1 space-y-1 mt-2"
-                on:submit|preventDefault
-            >
-                <input
-                    type="password"
-                    placeholder="Current password"
-                    class="text-white w-80 bg-transparent border border-cyan-400 outline-none text-sm px-2 py-1"
-                    bind:value={form.current}
-                />
-                <input
-                    type="password"
-                    placeholder="New password"
-                    class="text-white w-80 bg-transparent border border-cyan-400 outline-none text-sm px-2 py-1"
-                    bind:value={form.new}
-                />
-                <button
-                    class="flex text-white w-80 bg-cyan-400 text-sm px-2 font-semibold py-1 my-auto"
-                    type="submit"
-                >
-                    <div class="flex mx-auto">
-                        <KeyIcon size="18" /><span class="pl-2"
-                            >Reset password</span
-                        >
-                    </div>
-                </button>
-            </form>
+            <Card title="Account">
+                Welcome back <b>barius</b>
+                <button on:click={() => password = true} class="ml-2 bg-cyan-400 text-sm px-2 font-semibold py-1 my-auto">Change password</button>
+            </Card>
+            <Card title="Settings">
+                <button on:click={() => embed = true} class="bg-cyan-400 text-sm px-2 font-semibold py-1 my-auto">Change embed settings</button>
+                <button on:click={() => file = true} class="bg-cyan-400 text-sm px-2 font-semibold py-1 my-auto">Delete a file</button>
+            </Card>
         </div>
     </div>
 </div>
