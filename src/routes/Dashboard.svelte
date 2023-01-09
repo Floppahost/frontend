@@ -6,6 +6,10 @@
 
     let embed, file, password;
 
+    setInterval(() => {
+        console.log(embed);
+    }, 2000)
+
     async function changeEmbedSettings() {
         //kroks's work
     }
@@ -19,7 +23,7 @@
     }
 </script>
 
-<Modal title="Change embed" open={embed}>
+<Modal title="Change embed settings" open={embed}>
     <form method="post" class="grid grid-cols-1 gap-y-2 text-sm mt-1 w-80" on:submit|preventDefault={changeEmbedSettings}>
         <input type="text" placeholder="Site name" class="bg-transparent border border-cyan-400 outline-none px-2 py-1" bind:value={form.embed.sitename} />
         <input type="text" placeholder="Site name URL" class="bg-transparent border border-cyan-400 outline-none px-2 py-1" bind:value={form.embed.sitenameurl} />
