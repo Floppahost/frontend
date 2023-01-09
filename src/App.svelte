@@ -1,5 +1,4 @@
 <script>
-  import "tw-elements";
   import Router from "svelte-spa-router";
   import { routes } from "./routes";
   import Header from "./lib/Header.svelte";
