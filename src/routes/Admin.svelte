@@ -1,3 +1,9 @@
+<script>
+    async function invitewave() {
+        //kroks's work -- ye ye i am a nigga i am kroks
+    }
+</script>
+
 <div class="flex h-screen">
     <div class="m-auto sm:w-1/3 w-full">
         <div class="grid sm:grid-cols-2 grid-cols-1 gap-4 w-full mx-auto">
