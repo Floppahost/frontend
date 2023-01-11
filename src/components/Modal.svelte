@@ -1,4 +1,5 @@
 <script>
+    import {states} from "../stores"
     export let open = false
     export let title;
 </script>

@@ -1,14 +1,9 @@
 <script>
     import Card from "../components/Card.svelte"
     import Modal from "../components/Modal.svelte";
+    import {states} from "../stores"
 
     let form = {embed: {}, file: {}, password: {}}
-
-    let embed, file, password;
-
-    setInterval(() => {
-        console.log(embed);
-    }, 2000)
 
     async function changeEmbedSettings() {
         //kroks's work
@@ -23,7 +18,7 @@
     }
 </script>
 
-<Modal title="Change embed settings" open={embed}>
+<Modal title="Change embed settings" open={$states.modals.embed}>
     <form method="post" class="grid grid-cols-1 gap-y-2 text-sm mt-1 w-80" on:submit|preventDefault={changeEmbedSettings}>
         <input type="text" placeholder="Site name" class="bg-transparent border border-cyan-400 outline-none px-2 py-1" bind:value={form.embed.sitename} />
         <input type="text" placeholder="Site name URL" class="bg-transparent border border-cyan-400 outline-none px-2 py-1" bind:value={form.embed.sitenameurl} />
@@ -35,14 +30,14 @@
     </form>
 </Modal>
 
-<Modal title="Delete a file" open={file}>
+<Modal title="Delete a file" open={$states.modals.file}>
     <form method="post" class="grid grid-cols-1 gap-y-2 text-sm mt-1 w-80" on:submit|preventDefault={deleteFile}>
         <input type="text" placeholder="File" class="bg-transparent border border-cyan-400 outline-none px-2 py-1" bind:value={form.file.name} />
         <button type="submit" class="bg-cyan-400 text-sm px-2 font-semibold py-1 my-auto">Delete a file</button>
     </form>
 </Modal>
 
-<Modal title="Change password" open={password}>
+<Modal title="Change password" open={$states.modals.password}>
     <form method="post" class="grid grid-cols-1 gap-y-2 text-sm mt-1 w-80" on:submit|preventDefault={changePassword}>
         <input type="password" placeholder="Old password" class="bg-transparent border border-cyan-400 outline-none px-2 py-1" bind:value={form.password.old} />
         <input type="password" placeholder="New password" class="bg-transparent border border-cyan-400 outline-none px-2 py-1" bind:value={form.password.new} />
@@ -55,11 +50,11 @@
         <div class="grid sm:grid-cols-2 grid-cols-1 gap-4 w-full mx-auto">
             <Card title="Account">
                 Welcome back <b>barius</b>
-                <button on:click={() => password = true} class="ml-2 bg-cyan-400 text-sm px-2 font-semibold py-1 my-auto">Change password</button>
+                <button on:click={() => $states.modals.password = true} class="ml-2 bg-cyan-400 text-sm px-2 font-semibold py-1 my-auto">Change password</button>
             </Card>
             <Card title="Settings">
-                <button on:click={() => embed = true} class="bg-cyan-400 text-sm px-2 font-semibold py-1 my-auto">Change embed settings</button>
-                <button on:click={() => file = true} class="bg-cyan-400 text-sm px-2 font-semibold py-1 my-auto">Delete a file</button>
+                <button on:click={() => $states.modals.embed = true} class="bg-cyan-400 text-sm px-2 font-semibold py-1 my-auto">Change embed settings</button>
+                <button on:click={() => $states.modals.file = true} class="bg-cyan-400 text-sm px-2 font-semibold py-1 my-auto">Delete a file</button>
             </Card>
         </div>
     </div>
