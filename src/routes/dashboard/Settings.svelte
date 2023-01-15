@@ -22,10 +22,7 @@
 <div class="flex h-screen">
     <div class="m-auto">
         <div class="grid grid-cols-2 gap-4">
-            <Card title="Dashboard" additional="col-span-2">
-                Welcome back, barius
-            </Card>
-            <Card title="Change password">
+            <Card title="Change embed">
                 <form method="post"
                 class="grid grid-cols-1 mt-2"
                 on:submit|preventDefault={changePassword} >
