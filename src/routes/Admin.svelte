@@ -7,7 +7,7 @@
 <div class="flex h-screen">
     <div class="m-auto sm:w-1/3 w-full">
         <div class="grid sm:grid-cols-2 grid-cols-1 gap-4 w-full mx-auto">
-            <div class="backdrop-blur-lg bg-cyan-400/10 p-4 rounded-3xl">
+            <div class="backdrop-blur-lg bg-neutral-800/75 p-4 rounded-3xl">
                 <div class="flex">
                     <p class="text-3xl font-bold">Admin Dashboard</p>
                 </div>
@@ -18,7 +18,7 @@
                 </div>
                 <p>Logged in as <b>barius</b></p>
             </div>
-                <div class="backdrop-blur-lg bg-cyan-400/10 p-4 rounded-3xl space-y-4">
+                <div class="backdrop-blur-lg bg-neutral-800/75 p-4 rounded-3xl space-y-4">
                     <b class="text-3xl">Blacklist A User</b>
                     <form method="post" class="grid grid-cols-1 space-y-1">
                         <input
@@ -31,7 +31,7 @@
                         >
                     </form>
                 </div>
-                <div class="backdrop-blur-lg bg-cyan-400/10 p-4 rounded-3xl space-y-4">
+                <div class="backdrop-blur-lg bg-neutral-800/75 p-4 rounded-3xl space-y-4">
                     <b class="text-3xl">Unblacklist A User</b>
                     <form method="post" class="grid grid-cols-1 space-y-1">
                         <input
@@ -44,7 +44,7 @@
                         >
                 </form>
             </div>
-            <div class="backdrop-blur-lg bg-cyan-400/10 p-4 rounded-3xl">
+            <div class="backdrop-blur-lg bg-neutral-800/75 p-4 rounded-3xl">
                 <div class="flex">
                     <p class="text-3xl font-bold">Tools</p>
                 </div>
