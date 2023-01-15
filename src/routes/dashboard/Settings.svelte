@@ -62,7 +62,7 @@
                             bind:value={form.embeddescription}
                             required
                         />
-                        <h1 class="font-extrabold text-3xl">Change embed color</h1>
+                        <h1 class="mt-4 font-extrabold text-3xl">Change embed color</h1>
                         <input
                             type="color"
                             placeholder="Embed color"
