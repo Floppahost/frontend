@@ -1,10 +1,9 @@
 <script>
     export let title;
+    export let additional = '';
 </script>
 
-<div class="backdrop-blur-xl bg-black/50 p-4 rounded-3xl">
-    <div class="flex">
-        <h1 class="text-2xl font-black mb-px">{title}</h1>
-    </div>
+<div class="p-4 bg-neutral-800/75 rounded-3xl {additional}">
+    <p class="font-extrabold text-left text-3xl">{title}</p>
     <slot />
 </div>

@@ -9,9 +9,6 @@ module.exports = {
     extend: {
       colors: {
         "main": "#06B6D4"
-      },
-      fontFamily: {
-        "default": "IBM Plex Sans, sans-serif"
       }
     },
   },
