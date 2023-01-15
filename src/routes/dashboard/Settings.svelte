@@ -5,7 +5,7 @@
     let form = {};
     let response = {};
 
-    async function changePassword() {
+    async function changeEmbed() {
         let call = await fetch("/route", {
             method: "post",
             body: JSON.stringify(form),
@@ -25,24 +25,53 @@
             <Card title="Change embed">
                 <form method="post"
                 class="grid grid-cols-1 mt-2"
-                on:submit|preventDefault={changePassword} >
+                on:submit|preventDefault={changeEmbed} >
                     <Response status={response.status} message={response.message} />
                         <input
-                            type="password"
-                            placeholder="Old password"
+                            type="text"
+                            placeholder="Site name"
                             class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg"
-                            bind:value={form.old_password}
+                            bind:value={form.sitename}
                             required
                         />
                         <input
-                            type="password"
-                            placeholder="New password"
+                            type="text"
+                            placeholder="Embed author"
                             class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg mt-1"
-                            bind:value={form.new_password}
+                            bind:value={form.embedauthor}
+                            required
+                        />
+                        <input
+                            type="text"
+                            placeholder="Embed author url"
+                            class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg mt-1"
+                            bind:value={form.embedauthorurl}
+                            required
+                        />
+                        <input
+                            type="text"
+                            placeholder="Embed title"
+                            class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg mt-1"
+                            bind:value={form.embedtitle}
+                            required
+                        />
+                        <input
+                            type="text"
+                            placeholder="Embed description"
+                            class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg mt-1"
+                            bind:value={form.embeddescription}
+                            required
+                        />
+                        <h1 class="font-extrabold text-3xl">Change embed color</h1>
+                        <input
+                            type="color"
+                            placeholder="Embed color"
+                            class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg mt-1"
+                            bind:value={form.embedcolor}
                             required
                         />
                         <button type="submit" class="mt-4 px-4 py-px font-bold rounded-lg bg-cyan-500 shadow-lg shadow-cyan-500/60">
-                            Change password
+                            Change embed settings
                         </button>
                 </form>
             </Card>
