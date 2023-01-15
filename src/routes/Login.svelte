@@ -1,19 +1,23 @@
 <script>
     import Response from "../components/Response.svelte";
-
+    import axios from "axios"
     let form = {};
     let response = {};
 
     async function login() {
-        let call = await fetch("/login", {
+        // @ts-ignore
+        await axios({
+            withCredentials: true,
             method: "post",
-            body: JSON.stringify(form),
+            url: "https://api.floppa.host/auth/login",
+            data: form
+        }).then((res)=>{
+            response.status = res.status
+            response.message = res.data.message
+            response.cookie = res.headers
         });
 
-        response = {
-            status: call.status,
-            message: "alo"
-        };
+        console.log(response.cookie)
     }
 </script>
 
@@ -28,12 +32,11 @@
             class="grid grid-cols-1 mt-2"
             on:submit|preventDefault={login}
         >
-        <Response status={response.status} message={response.message} />
             <input
                 type="text"
                 placeholder="Name"
                 class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg"
-                bind:value={form.name}
+                bind:value={form.username}
                 required
             />
             <input
