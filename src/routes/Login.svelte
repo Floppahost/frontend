@@ -1,19 +1,31 @@
 <script>
-    import Response from "../components/Response.svelte";
+    import {
+        UnlockIcon,
+        AlertCircleIcon,
+        CheckIcon,
+    } from "svelte-feather-icons";
+    import { blur } from "svelte/transition";
 
     let form = {};
     let response = {};
 
     async function login() {
-        let call = await fetch("/login", {
-            method: "post",
-            body: JSON.stringify(form),
-        });
+       // @ts-ignore
+       const domain = import.meta.env.VITE_BACKEND_DOMAIN
+        const request = await fetch(`${domain}/auth/login`, {
+            method: "POST",
+            credentials: 'include',
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(form)
+        })
 
         response = {
             status: call.status,
-            message: "alo"
         };
+
+        console.log(response, request)
     }
 </script>
 
@@ -32,7 +44,7 @@
             <input
                 type="text"
                 placeholder="Name"
-                class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg"
+                class="text-white w-80 bg-transparent border border-cyan-400 outline-none text-sm px-2 py-1"
                 bind:value={form.name}
                 required
             />
