@@ -1,19 +1,40 @@
 <script>
+    import { onMount } from "svelte";
     import { PlusIcon, AlertCircleIcon, CheckIcon } from "svelte-feather-icons";
     import { blur } from "svelte/transition";
 
+    // @ts-ignore
+    const domain = import.meta.env.VITE_BACKEND_DOMAIN
+   
     let form = {};
     let response = {};
+    
+    let inviteOnly = true
+    onMount(async()=>{
+        const request = await fetch(`${domain}/status/invite`)
+        request.json().then((data)=> {
+            inviteOnly = data.inviteOnly
+        })
+    })
 
-    async function register() {
-        let call = await fetch("/register", {
-            method: "post",
+    let error = ""
+    const register = async () => {
+        const request = await fetch(`${domain}/auth/register`, {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
             body: JSON.stringify(form),
         });
 
         response = {
-            status: call.status,
+            data: request.json().then((data)=>{return data}),
+            status: request.status,
         };
+
+        if (response.status === 200) {
+            location.href = "#/dashboard"
+        }
     }
 </script>
 
@@ -37,7 +58,7 @@
             <div class="flex w-80 bg-red-500 text-sm px-2 py-1 my-auto">
                 <div class="flex mx-auto">
                     <AlertCircleIcon size="18" /><span class="pl-2"
-                        >Invalid data</span
+                        >{error}</span
                     >
                 </div>
             </div>
@@ -51,7 +72,7 @@
                 type="text"
                 placeholder="Name"
                 class="text-white w-80 bg-transparent border border-cyan-400 outline-none text-sm px-2 py-1"
-                bind:value={form.name}
+                bind:value={form.username}
                 required
             />
             <input
@@ -68,6 +89,7 @@
                 bind:value={form.password}
                 required
             />
+            {#if inviteOnly}
             <input
                 type="text"
                 placeholder="Invitation code"
@@ -75,6 +97,7 @@
                 bind:value={form.invite}
                 required
             />
+            {/if}
             <button
                 class="flex text-white w-80 bg-cyan-400 outline-none text-sm px-2 font-semibold py-1 my-auto"
                 type="submit"

@@ -1,5 +1,16 @@
 <script>
+    import { onMount } from "svelte";
     import { blur } from "svelte/transition";
+
+    let inviteOnly = true
+    onMount(async()=>{
+        // @ts-ignore
+        const domain = import.meta.env.VITE_BACKEND_DOMAIN
+        const request = await fetch(`${domain}/status/invite`)
+        request.json().then((data)=> {
+            inviteOnly = data.inviteOnly
+        })
+    })
 </script>
 
 <div class="flex h-screen">
@@ -19,11 +30,14 @@
                     <div class="w-px h-full bg-white mx-auto" />
                 </div>
                 <p class="font-normal text-sm">
-                    Established in 2022, image hosting service that is reliable,
-                    fast and trustworthy. Made by a few young coders who spent
-                    their free time to code this service. <b
-                        >Registration requires an invitation code.</b
+                    A file hosting service that is reliable,
+                    fast, trustworthy — running since 2023. Made by a few young coders who spent
+                    their free time to code this service. 
+                    {#if inviteOnly}
+                    <strong
+                        >Registration requires an invitation code.</strong
                     >
+                    {/if}
                 </p>
             </div>
         </div>
