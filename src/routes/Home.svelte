@@ -1,3 +1,13 @@
+<script>
+    import { onMount } from "svelte";
+
+    onMount(async ()=>{
+        await fetch("https://api.floppa.host/auth/status", {
+            credentials: "include"
+        })
+    })
+</script>
+
 <div class="flex h-screen">
     <div class="m-auto">
         <img src="/logo-faded.png" alt="logo" class="w-56 mx-auto mb-12">

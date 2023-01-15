@@ -6,15 +6,18 @@
 
     async function login() {
         // @ts-ignore
-        await axios({
-            withCredentials: true,
+        await fetch("https://api.floppa.host/auth/login", {
+            headers: {
+                "Content-type": "application/json"
+            },
+            credentials: "include",
             method: "post",
-            url: "https://api.floppa.host/auth/login",
-            data: form
+            body: JSON.stringify(form)
         }).then((res)=>{
             response.status = res.status
-            response.message = res.data.message
-            response.cookie = res.headers
+            res.json().then((data)=> {
+                response.message = data.message
+            })
         });
 
         console.log(response.cookie)
