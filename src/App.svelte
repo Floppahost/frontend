@@ -6,17 +6,19 @@
   import Transition from "./components/Transition.svelte";
   import { onMount } from "svelte";
   import AccessDenied from "./routes/AccessDenied.svelte";
+    import { loggedIn } from "./stores";
 
   $: status = 401;
-
   // auth validator
   onMount(async () => {
-    let response = await fetch("/status", {
-      method: "post",
-      credentials: "include",
-    });
-
-    status = response.status;
+       await fetch("https://api.floppa.host/auth/status", {
+            credentials: "include"
+        }).then((res)=>
+        {
+            if (res.status === 202) {
+                loggedIn.set(true)
+            }
+        })
   });
 </script>
 

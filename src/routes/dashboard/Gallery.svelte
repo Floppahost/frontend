@@ -2,7 +2,17 @@
     import { onMount } from "svelte";
     import Card from "../../components/Card.svelte";
     import FaTrashAlt from 'svelte-icons/fa/FaTrashAlt.svelte'
+    import { loggedIn } from "../../stores.js"
 
+    let isLoggedIn
+    loggedIn.subscribe((v) => {
+        console.log(v)
+        isLoggedIn = v
+        if (!v) {
+            location.href = "/"
+        }
+    })
+    
     let images = [
         {title: "asdasdsadasdaswdwdwdw", image: "logo.png"},
         {title: "b", image: "logo.png"},

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@bulatdashiev/svelte-slider": "^1.0.3",
     "@sveltejs/vite-plugin-svelte": "^1.1.0",
     "autoprefixer": "^10.4.13",
     "dotenv": "^16.0.3",

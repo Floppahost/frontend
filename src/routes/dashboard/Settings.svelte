@@ -1,6 +1,16 @@
 <script>
     import Card from "../../components/Card.svelte";
     import Response from "../../components/Response.svelte";
+    import { loggedIn } from "../../stores";
+
+    let isLoggedIn
+    loggedIn.subscribe((v) => {
+        console.log(v)
+        isLoggedIn = v
+        if (!v) {
+            location.href = "/"
+        }
+    })
 
     let form = {}
     let response = {}
@@ -16,7 +26,7 @@
     }
 
     async function changeEmbed() {
-        let call = await fetch("/route", {
+        let call = await fetch("https://", {
             method: "post",
             body: JSON.stringify(form),
         });
@@ -30,6 +40,7 @@
 </script>
 
 <div class="flex h-screen">
+    {#if isLoggedIn}
     <div class="m-auto">
         <div class="grid grid-cols-2 gap-4">
             <Card title="Change embed">
@@ -112,4 +123,5 @@
             </Card>
         </div>
     </div>
+    {/if}
 </div>
