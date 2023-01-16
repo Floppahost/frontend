@@ -2,8 +2,18 @@
     import Card from "../../components/Card.svelte";
     import Response from "../../components/Response.svelte";
 
-    let form = {};
-    let response = {};
+    let form = {}
+    let response = {}
+    
+    let paths = {
+        selected: undefined,
+        pages: [
+            "default",
+            "amongus",
+            "amongus + emoji",
+            "custom"
+        ]
+    }
 
     async function changeEmbed() {
         let call = await fetch("/route", {
@@ -82,9 +92,22 @@
                         </button>
                 </form>
             </Card>
-            <Card title="Download config" additional="h-min">
+            <Card title="Change path" additional="h-min">
+                <select bind:value={paths.selected} class="mt-2 bg-neutral-800 text-sm border border-neutral-700 px-2 w-full">
+                    {#each paths.pages as page}
+                        <option value={page}>
+                            {page}
+                        </option>
+                    {/each}
+                </select>
+
+                {#if paths.selected === paths.pages[0]}
+                    defualt
+                {:else if paths.selected === paths.pages[1]}
+                    amongus
+                {/if}
                 <button type="submit" class="w-full mt-4 px-4 py-px font-bold rounded-lg bg-cyan-500 shadow-lg shadow-cyan-500/60">
-                    Download config
+                    Save new path
                 </button>
             </Card>
         </div>
