@@ -1,9 +1,18 @@
 <script>
     import Card from "../../components/Card.svelte";
     import Response from "../../components/Response.svelte";
-
+    import { loggedIn } from "../../stores.js"
     let form = {};
     let response = {};
+
+    let isLoggedIn
+    loggedIn.subscribe((v) => {
+        console.log(v)
+        isLoggedIn = v
+        if (!v) {
+            location.href = "/"
+        }
+    })
 
     async function changePassword() {
         let call = await fetch("/route", {
