@@ -1,10 +1,10 @@
 <script>
-	import { blur } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 	export let path = '';
 </script>
 
 {#key path}
-	<div in:blur={{ duration: 500 }}>
+	<div in:fly={{ y: 20, duration: 500 }}>
 		<slot />
 	</div>
 {/key}
