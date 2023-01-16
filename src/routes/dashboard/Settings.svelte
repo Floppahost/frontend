@@ -62,14 +62,21 @@
                             bind:value={form.embeddescription}
                             required
                         />
-                        <h1 class="mt-4 font-extrabold text-3xl">Change embed color</h1>
-                        <input
-                            type="color"
-                            placeholder="Embed color"
-                            class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg mt-1"
-                            bind:value={form.embedcolor}
-                            required
-                        />
+                        <div class="flex w-80 bg-neutral-800 text-sm px-2 py-px rounded-lg mt-1 my-auto">
+                            <input
+                                type="color"
+                                class="h-4 w-4 my-auto"
+                                bind:value={form.embedcolor}
+                                required
+                            />
+                            <input
+                                type="text"
+                                placeholder="Embed color (use hex)"
+                                class="outline-none bg-transparent ml-2"
+                                bind:value={form.embedcolor}
+                                required
+                            />
+                        </div>
                         <button type="submit" class="mt-4 px-4 py-px font-bold rounded-lg bg-cyan-500 shadow-lg shadow-cyan-500/60">
                             Change embed settings
                         </button>
