@@ -1,9 +1,15 @@
 <script>
+// @ts-nocheck
+
     import Card from "../../components/Card.svelte";
     import Response from "../../components/Response.svelte";
     import { loggedIn } from "../../stores";
+	import Slider from '@bulatdashiev/svelte-slider';
 
-    let isLoggedIn
+    let customPath
+    let quantity =  [1,5]
+    let isLoggedIn = false
+    let pathMode
     loggedIn.subscribe((v) => {
         console.log(v)
         isLoggedIn = v
@@ -15,19 +21,37 @@
     let form = {}
     let response = {}
     
+    const getDomains = async () => {
+        return await fetch("https://api.floppa.host/preferences/get/domains", {
+            credentials: "include"
+        }).then((res)=>{res.json().then((data)=> {
+            return data.domains
+        })})
+    } 
+    let domains = {selected: undefined, domains: [
+        {domain: "1", wildcard: false}
+    ]}
+
     let paths = {
         selected: undefined,
         pages: [
-            "default",
-            "amongus",
-            "amongus + emoji",
-            "custom"
+            "Random",
+            "Emojis",
+            "AmongUs",
+            "AmongUs + Emojis",
+            "Custom"
         ]
     }
 
+    const updatePath = async () => {
+        const call = await fetch("https://api.floppa.host/preferences/change/path")
+    }
+
+   
     async function changeEmbed() {
-        let call = await fetch("https://", {
+        let call = await fetch("https://api.floppa.host/preferences/change/embed", {
             method: "post",
+            credentials: "include",
             body: JSON.stringify(form),
         });
 
@@ -46,55 +70,42 @@
             <Card title="Change embed">
                 <form method="post"
                 class="grid grid-cols-1 mt-2"
-                on:submit|preventDefault={changeEmbed} >
+                on:submit|preventDefault={changeEmbed}>
                     <Response status={response.status} message={response.message} />
-                        <input
-                            type="text"
-                            placeholder="Site name"
-                            class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg"
-                            bind:value={form.sitename}
-                            required
-                        />
                         <input
                             type="text"
                             placeholder="Embed author"
                             class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg mt-1"
-                            bind:value={form.embedauthor}
+                            bind:value={form.author}
                             required
                         />
-                        <input
-                            type="text"
-                            placeholder="Embed author url"
-                            class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg mt-1"
-                            bind:value={form.embedauthorurl}
-                            required
-                        />
+                        
                         <input
                             type="text"
                             placeholder="Embed title"
                             class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg mt-1"
-                            bind:value={form.embedtitle}
+                            bind:value={form.title}
                             required
                         />
                         <input
                             type="text"
                             placeholder="Embed description"
                             class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg mt-1"
-                            bind:value={form.embeddescription}
+                            bind:value={form.description}
                             required
                         />
                         <div class="flex w-80 bg-neutral-800 text-sm px-2 py-px rounded-lg mt-1 my-auto">
                             <input
                                 type="color"
                                 class="h-4 w-4 my-auto"
-                                bind:value={form.embedcolor}
+                                bind:value={form.color}
                                 required
                             />
                             <input
                                 type="text"
                                 placeholder="Embed color (use hex)"
                                 class="outline-none bg-transparent ml-2"
-                                bind:value={form.embedcolor}
+                                bind:value={form.color}
                                 required
                             />
                         </div>
@@ -111,15 +122,28 @@
                         </option>
                     {/each}
                 </select>
+                {#if paths.selected === "AmongUs" || paths.selected === "AmongUs + Emojis" || paths.selected === "Emojis"}
+                <span>Quantity: {quantity[0]}</span>
+                <Slider bind:value={quantity} step={1} min={1} max={5}/>
+                {/if}
 
-                {#if paths.selected === paths.pages[0]}
-                    defualt
-                {:else if paths.selected === paths.pages[1]}
-                    amongus
+                {#if paths.selected === "Custom"}
+                <div>
+                    <input class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg mt-1" type="text" bind:value={customPath} placeholder="Custom path"/>
+                </div>
                 {/if}
                 <button type="submit" class="w-full mt-4 px-4 py-px font-bold rounded-lg bg-cyan-500 shadow-lg shadow-cyan-500/60">
                     Save new path
                 </button>
+            </Card>
+            <Card title="Change domain" additional="h-min">
+                <select bind:value={paths.selected} class="mt-2 bg-neutral-800 text-sm border border-neutral-700 px-2 w-full">
+                    {#each domains.domains as domain}
+                        <option value={domain["wildcard"]}>
+                            {domain["wildcard"]}
+                        </option>
+                    {/each}
+                </select>
             </Card>
         </div>
     </div>

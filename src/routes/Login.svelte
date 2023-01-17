@@ -15,12 +15,13 @@
             body: JSON.stringify(form)
         }).then((res)=>{
             response.status = res.status
+            if (res.status === 200) {
+                location.href = "/#/dashboard"
+            }
             res.json().then((data)=> {
                 response.message = data.message
             })
         });
-
-        console.log(response.cookie)
     }
 </script>
 

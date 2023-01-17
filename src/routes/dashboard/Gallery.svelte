@@ -4,7 +4,7 @@
     import FaTrashAlt from 'svelte-icons/fa/FaTrashAlt.svelte'
     import { loggedIn } from "../../stores.js"
 
-    let isLoggedIn
+    let isLoggedIn = false
     loggedIn.subscribe((v) => {
         console.log(v)
         isLoggedIn = v
@@ -26,6 +26,7 @@
 </script>
 
 <div class="flex h-screen">
+    {#if loggedIn}
     <div class="m-auto">
         <div class="grid grid-cols-2 gap-4">
             {#each images as image}
@@ -40,4 +41,5 @@
             {/each}
         </div>
     </div>
+    {/if}
 </div>
