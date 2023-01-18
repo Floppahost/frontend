@@ -6,7 +6,7 @@
   import Transition from "./components/Transition.svelte";
   import { onMount } from "svelte";
   import AccessDenied from "./routes/AccessDenied.svelte";
-  import { loggedIn, uid, username } from "./stores";
+  import { admin, loggedIn, uid, username } from "./stores";
   import { SvelteToast } from '@zerodevx/svelte-toast'
   
   $: status = 401;
@@ -22,7 +22,7 @@
             res.json().then((data)=>{
                 username.set(data.username)
                 uid.set(data.uid)
-                console.log(data)
+                admin.set(data.admin)
             })
         })
   });

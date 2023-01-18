@@ -1,8 +1,15 @@
 <script>
-    import Response from "../components/Response.svelte";
-    import axios from "axios"
+    import { loggedIn } from "../stores";
+
+
     let form = {};
     let response = {};
+
+    loggedIn.subscribe((v) => {
+        if (v) {
+            location.href = "/#/dashboard"
+        }
+    })
 
     async function login() {
         // @ts-ignore

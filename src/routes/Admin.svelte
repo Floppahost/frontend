@@ -3,7 +3,7 @@
 
     import { toast } from "@zerodevx/svelte-toast";
     import { error, success } from "../components/toaster/Themes.js";
-    import { loggedIn, uid, username } from "../stores.js"
+    import { admin, loggedIn, uid, username } from "../stores.js"
 
     
     let unblacklistUsername = ""
@@ -85,12 +85,19 @@
     }
 
     loggedIn.subscribe((v) => {
-        console.log(v)
         isLoggedIn = v
         if (!v) {
             location.href = "/"
         }
     })
+
+    admin.subscribe((v) => {
+        isLoggedIn = v
+        if (!v) {
+            location.href = "/"
+        }
+    })
+
     
     username.subscribe((v)=>{
         usernameValue = v
@@ -186,6 +193,7 @@
                     class="text-white w-full rounded-lg bg-transparent border border-cyan-400 outline-none text-sm px-2 py-1"
                      />
                     <button
+                    type="submit"
                         class="text-white w-70 rounded-lg bg-cyan-400 outline-none text-sm px-2 font-bold py-1"
                         >Add the domain</button
                     >

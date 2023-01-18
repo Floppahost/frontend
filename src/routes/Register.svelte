@@ -2,8 +2,15 @@
     import Response from "../components/Response.svelte";
     import axios from "axios"
     import {onMount} from "svelte"
+    import { loggedIn } from "../stores";
     let form = {};
     let response = {};
+
+    loggedIn.subscribe((v) => {
+        if (v) {
+            location.href = "/#/dashboard"
+        }
+    })
 
     onMount(async () => {
         await axios.get(`https://api.floppa.host/status/invite`).then((res)=>response = {

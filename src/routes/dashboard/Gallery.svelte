@@ -6,7 +6,6 @@
 
     let isLoggedIn = false
     loggedIn.subscribe((v) => {
-        console.log(v)
         isLoggedIn = v
         if (!v) {
             location.href = "/"
@@ -26,7 +25,7 @@
 </script>
 
 <div class="flex h-screen">
-    {#if loggedIn}
+    {#if isLoggedIn}
     <div class="m-auto">
         <div class="grid grid-cols-2 gap-4">
             {#each images as image}

@@ -1,12 +1,23 @@
 <script>
     import {push} from 'svelte-spa-router'
+    import {loggedIn} from "../stores"
 
     let paths = [
+        {name: 'home', path: "/"},
+        {name: 'login', path: "/login"},
+        {name: 'register', path: "/register"},
+    ]
+
+    loggedIn.subscribe((v)=>{
+        if (v) {
+        paths = [   
         {name: 'dashboard', path: "/dashboard"},
         {name: 'settings', path: "/dashboard/settings"},
         {name: 'gallery', path: "/dashboard/gallery"}
     ]
-
+    }
+    })
+   
     let selected;
 </script>
 

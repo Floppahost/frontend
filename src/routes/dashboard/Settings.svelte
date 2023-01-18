@@ -13,7 +13,6 @@
     let quantity =  [1,5]
     let isLoggedIn = false
     loggedIn.subscribe((v) => {
-        console.log(v)
         isLoggedIn = v
         if (!v) {
             location.href = "/"
@@ -141,13 +140,34 @@ const changeDomain = async () => {
                 class="grid grid-cols-1 mt-2"
                 on:submit|preventDefault={changeEmbed}>
                     <Response status={response.status} message={response.message} />
-                        <input
+                    <input
+                    type="text"
+                    placeholder="Embed site name"
+                    class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg mt-1"
+                    bind:value={form.site_name}
+                    required
+                    />
+                    <input
+                    type="text"
+                    placeholder="Embed site url"
+                    class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg mt-1"
+                    bind:value={form.site_name_url}
+                    required
+                    />
+                    <input
                             type="text"
                             placeholder="Embed author"
                             class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg mt-1"
                             bind:value={form.author}
                             required
                         />
+                        <input
+                        type="text"
+                        placeholder="Embed author url"
+                        class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg mt-1"
+                        bind:value={form.author_url}
+                        required
+                    />
                         
                         <input
                             type="text"
