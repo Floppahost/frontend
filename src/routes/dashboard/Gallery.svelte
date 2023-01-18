@@ -66,7 +66,7 @@
                             <button on:click={()=>deleteImage(image.upload_id)} class="ease-out duration-200 hover:px-6 px-4 py-1 rounded-lg bg-red-500 shadow-lg shadow-red-500/60">
                                 Delete
                             </button>
-                            <button on:click={()=>{navigator.clipboard.writeText(image.upload_url); toast.push("URL has been copied to your clipboard", success)}} class="ease-out duration-200 hover:px-6 px-4 py-1 rounded-lg bg-cyan-500 shadow-lg shadow-cyan-500/60">Copy URL</button>
+                            <button on:click={()=>{navigator.clipboard.writeText("https://" + image.upload_url); toast.push("URL has been copied to your clipboard", success)}} class="ease-out duration-200 hover:px-6 px-4 py-1 rounded-lg bg-cyan-500 shadow-lg shadow-cyan-500/60">Copy URL</button>
                         </div>
                     </div>
                    
