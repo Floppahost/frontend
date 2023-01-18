@@ -8,6 +8,13 @@
     })
 </script>
 
+<svelte:head>
+  <meta property="og:title" content="Floppa.host — file hosting">
+  <meta property="og:url" content="https://floppa.host">
+  <meta property="og:image" content="https://floppa.host/logo-faded.png">
+  <meta property="og:description" content="A fast, reliable, private and privacy oritented file hosting service.">
+</svelte:head>
+
 <div class="flex h-screen">
     <div class="m-auto">
         <img src="/logo-faded.png" alt="logo" class="w-56 mx-auto mb-12">

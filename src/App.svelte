@@ -35,6 +35,7 @@
 </script>
 
 <SvelteToast options={options} />
+
 <div class="text-white font-default mx-2">
   <Header>
     {#if status != 202}
