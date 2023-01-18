@@ -51,6 +51,12 @@
 <div class="flex h-screen">
     {#if isLoggedIn}
     <div class="m-auto">
+        {#if images.length <= 0}
+        <div class="m-auto p-4">
+            <p class="text-center text-3xl font-bold">No images</p>
+            <p class="text-center">You haven't uploaded any images.</p>
+        </div>
+        {/if}
         <div class="grid grid-cols-2 items-center gap-4">
             {#each images as image}
                 <Card title={image.file_name}>
