@@ -5,11 +5,13 @@
     import Response from "../../components/Response.svelte";
     import { loggedIn } from "../../stores";
 	import Slider from '@bulatdashiev/svelte-slider';
+    import { onMount } from "svelte";
+    import { toast } from "@zerodevx/svelte-toast";
+    import { error, success } from "../../components/toaster/Themes";
 
     let customPath
     let quantity =  [1,5]
     let isLoggedIn = false
-    let pathMode
     loggedIn.subscribe((v) => {
         console.log(v)
         isLoggedIn = v
@@ -20,17 +22,19 @@
 
     let form = {}
     let response = {}
-    
-    const getDomains = async () => {
-        return await fetch("https://api.floppa.host/preferences/get/domains", {
-            credentials: "include"
-        }).then((res)=>{res.json().then((data)=> {
-            return data.domains
-        })})
-    } 
+
     let domains = {selected: undefined, domains: [
         {domain: "1", wildcard: false}
     ]}
+
+        onMount(async()=>{
+         await fetch("https://api.floppa.host/preferences/get/domains", {
+            credentials: "include"
+            }).then((res)=>{res.json().then((data)=> {
+            domains.domains = data.domains
+        })})
+        })
+
 
     let paths = {
         selected: undefined,
@@ -44,23 +48,88 @@
     }
 
     const updatePath = async () => {
-        const call = await fetch("https://api.floppa.host/preferences/change/path")
+        let pathMode = ""
+        switch (paths.selected) {
+           
+            case "Emojis":
+            pathMode = "emoji"
+                break;
+            case "AmongUs":
+            pathMode = "amongus"
+                break;
+            case "AmongUs + Emojis":
+            pathMode = "amongus_emoji"
+                break;
+            case "Custom":
+            pathMode = "custom"
+                break;
+            default:
+                pathMode = "random"
+
+        }
+        await fetch("https://api.floppa.host/preferences/change/path", {
+            method: "POST",
+            credentials: "include",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify({
+                mode: pathMode,
+                path: customPath,
+                amount: quantity[0]
+            })
+        }).then((res)=>{
+            res.json().then((data)=>{
+                if (res.status !== 200) {
+                    toast.push(data.message, error)
+                } else {
+                    toast.push(data.message, success)
+                }
+            })
+        })
     }
 
    
     async function changeEmbed() {
-        let call = await fetch("https://api.floppa.host/preferences/change/embed", {
+        await fetch("https://api.floppa.host/preferences/change/embed", {
             method: "post",
+            headers: {
+                "Content-type": "application/json"
+            },
             credentials: "include",
             body: JSON.stringify(form),
-        });
+        }).then((res)=>{
+            res.json().then((data)=>{
+                if (res.status !== 200) {
+                    toast.push(data.message, error)
+                } else {
+                    toast.push(data.message, success)
+                }
+            })
+        })
 
-        response = {
-            status: call.status,
-            message: "alo"
-        };
     }
 
+const changeDomain = async () => {
+    await fetch("https://api.floppa.host/preferences/change/domain", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+            domain: domains.selected
+        })
+    }).then((res)=>{
+            res.json().then((data)=>{
+                if (res.status !== 200) {
+                    toast.push(data.message, error)
+                } else {
+                    toast.push(data.message, success)
+                }
+            })
+        })
+}
 </script>
 
 <div class="flex h-screen">
@@ -132,18 +201,21 @@
                     <input class="w-80 bg-neutral-800 outline-none text-sm px-2 py-px rounded-lg mt-1" type="text" bind:value={customPath} placeholder="Custom path"/>
                 </div>
                 {/if}
-                <button type="submit" class="w-full mt-4 px-4 py-px font-bold rounded-lg bg-cyan-500 shadow-lg shadow-cyan-500/60">
+                <button on:click={updatePath} type="submit" class="w-full mt-4 px-4 py-px font-bold rounded-lg bg-cyan-500 shadow-lg shadow-cyan-500/60">
                     Save new path
                 </button>
             </Card>
             <Card title="Change domain" additional="h-min">
-                <select bind:value={paths.selected} class="mt-2 bg-neutral-800 text-sm border border-neutral-700 px-2 w-full">
+                <select bind:value={domains.selected} class="mt-2 bg-neutral-800 text-sm border border-neutral-700 px-2 w-full">
                     {#each domains.domains as domain}
-                        <option value={domain["wildcard"]}>
-                            {domain["wildcard"]}
+                        <option value={domain["domain"]}>
+                            {domain["domain"]}
                         </option>
                     {/each}
                 </select>
+                <button on:click={changeDomain} class="w-full mt-4 px-4 py-px font-bold rounded-lg bg-cyan-500 shadow-lg shadow-cyan-500/60">
+                    Change the domain
+                </button>
             </Card>
         </div>
     </div>

@@ -6,3 +6,7 @@
   color: white;
   background-color: black;
 }
+
+._toastContainer  {
+  z-index: 10000;
+}
