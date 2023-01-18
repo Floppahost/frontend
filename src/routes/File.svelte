@@ -47,7 +47,7 @@
 {#if file.username !== undefined}
 <div class="flex h-screen">
     <div class="m-auto">
-        <div class="p-4 bg-neutral-800/75 rounded-3xl">
+        <div class="flex flex-col items-center justify-center p-4 bg-neutral-800/75 rounded-3xl">
             <h1 class="text-center font-extrabold text-3xl">{file.file_name}</h1>
             <img on:keydown={()=>window.open("https://" + file.file_url, "_blank")} on:click={()=>window.open("https://" + file.file_url, "_blank")} src={"https://" + file.file_url} alt={file.file_name} class="py-2 max-w-[32rem] rounded-3xl" />
             <div class="text-center">
