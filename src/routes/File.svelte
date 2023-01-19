@@ -25,7 +25,7 @@
     
 </script>
 
-<svelte:head>
+<head>
     <title>{file.file_name === undefined ? "Loading..." : file.file_name }</title>
    {#if file.title !== undefined} 
     <meta property="og:title" content={file.title}> 
@@ -50,7 +50,7 @@
     {/if}
     <meta name="theme-color" content={file.color}>
     <meta name="robots" content="noindex">
-</svelte:head>
+</head>
 
 <main>
 {#if !err}
