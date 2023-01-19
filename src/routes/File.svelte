@@ -34,9 +34,12 @@
 
     {#if fileType === "image"}
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content={`https://${file.file_url}`}>
-    <meta name="twitter:image:src" content={`https://${file.file_url}`}>
-    <meta property="og:image" content={`https://${file.file_url}`}>
+    <!-- <meta name="twitter:image" content={`https://${file.file_url}`}> -->
+    <!-- <meta name="twitter:image:src" content={`https://${file.file_url}`}> -->
+    <!-- <meta property="og:image" content={`https://${file.file_url}`}> -->
+    <meta name="twitter:image" content="https://cdn.upload.systems/uploads/kMtNYHx7.png">
+    <meta name="twitter:image:src" content="https://cdn.upload.systems/uploads/kMtNYHx7.png">
+    <meta property="og:image" content="https://cdn.upload.systems/uploads/kMtNYHx7.png">
     <link type="application/json+oembed" href={`https://api.floppa.host/files/embed?author_name=${file.author}&author_url=${file.author_url}&provider_name=${file.site_name}&provider_url=${file.site_name_url}`}>
     {:else if fileType === "video"}
     <meta name="twitter:video" content="https://${file.file_url}">
