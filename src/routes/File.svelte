@@ -25,16 +25,16 @@
     
 </script>
 
-<head>
+<svelte:head>
     <title>{file.file_name === undefined ? "Loading..." : file.file_name }</title>
    {#if file.title !== undefined} 
-    <meta property="og:title" content={file.title}> 
-    <meta name="twitter:title" content={file.title}>
+    <meta property="og:title" content="{file.title}"> 
+    <meta name="twitter:title" content="{file.title}">
    {/if}
 
     {#if file.description !== undefined} 
-    <meta property="og:description" content={file.description}>
-    <meta name="twitter:description" content={file.description}>
+    <meta property="og:description" content="{file.description}">
+    <meta name="twitter:description" content="{file.description}">
     {/if}
 
     {#if fileType === "image"}
@@ -50,7 +50,7 @@
     {/if}
     <meta name="theme-color" content={file.color}>
     <meta name="robots" content="noindex">
-</head>
+</svelte:head>
 
 <main>
 {#if !err}
