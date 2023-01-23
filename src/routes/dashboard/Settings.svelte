@@ -131,17 +131,17 @@
       credentials: "include",
     }).then((res) =>
       res.json().then((data) => {
-        form.site_name = data.site_name;
-        form.site_name_url = data.site_name_url;
-        form.author = data.author;
-        form.author_url = data.author_url;
-        form.title = data.title;
-        form.description = data.description;
-        form.color = data.color;
-        domains.selected = data.domain;
-        customPath = data.path;
-        quantity[0] = data.path_amount;
-        paths.selected = data.path_mode;
+        form.site_name = data.data.site_name;
+        form.site_name_url = data.data.site_name_url;
+        form.author = data.data.author;
+        form.author_url = data.data.author_url;
+        form.title = data.data.title;
+        form.description = data.data.description;
+        form.color = data.data.color;
+        domains.selected = data.data.domain;
+        customPath = data.data.path;
+        quantity[0] = data.data.path_amount;
+        paths.selected = data.data.path_mode;
       })
     );
   });
