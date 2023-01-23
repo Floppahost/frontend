@@ -1,7 +1,6 @@
 <script>
     import { onMount } from "svelte";
     import Card from "../../components/Card.svelte";
-    import FaTrashAlt from 'svelte-icons/fa/FaTrashAlt.svelte'
     import { loggedIn } from "../../stores.js"
     import { toast } from "@zerodevx/svelte-toast";
     import { error, success } from "../../components/toaster/Themes";
@@ -57,7 +56,7 @@
             <p class="text-center">You haven't uploaded any images.</p>
         </div>
         {/if}
-        <div class="grid grid-cols-2 items-center gap-4">
+        <div class="mt-24 mb-6 grid grid-cols-2 items-center gap-4">
             {#each images as image}
                 <Card title={image.file_name}>
                     <div class="flex flex-col justify-center items-center">
