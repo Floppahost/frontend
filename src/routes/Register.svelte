@@ -1,5 +1,6 @@
 <script>
     import Response from "../components/Response.svelte";
+    import { ArrowLeftIcon } from 'svelte-feather-icons'
     import axios from "axios"
     import {onMount} from "svelte"
     import { loggedIn } from "../stores";
@@ -42,8 +43,10 @@
 <div class="flex h-screen">
     <div class="m-auto p-4">
         <div class="flex justify-between">
-            <p class="font-extrabold text-left text-3xl">Register</p>
-            <a href="#/" class="ease-out duration-200 hover:px-6 px-4 h-min py-px rounded-lg bg-neutral-800 text-xs font-black my-auto">BACK</a>
+            <p class="font-bold text-left text-3xl">Register</p>
+            <a href="#/" class="p-1 rounded-full bg-neutral-800 text-xs font-bold my-auto text-neutral-400">
+                <ArrowLeftIcon size="20"/>
+            </a>
         </div>
         <form
             method="post"

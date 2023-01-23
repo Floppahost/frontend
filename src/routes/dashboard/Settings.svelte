@@ -164,8 +164,9 @@
 
 <div class="flex h-screen">
   {#if isLoggedIn}
-    <div class="m-auto">
-      <div class="grid grid-cols-2 gap-4">
+    <div class="mx-auto mt-48">
+      <p class="font-bold text-5xl mb-4">Settings</p>
+      <div class="grid sm:grid-cols-2 grid-cols-1 gap-4 pb-12">
         <Card title="Change embed">
           <form
             method="post"
