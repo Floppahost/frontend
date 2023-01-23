@@ -2,7 +2,6 @@
 // @ts-nocheck
 
     import Card from "../../components/Card.svelte";
-    import Response from "../../components/Response.svelte";
     import { loggedIn } from "../../stores";
 	import Slider from '@bulatdashiev/svelte-slider';
     import { onMount } from "svelte";
@@ -12,15 +11,13 @@
     let customPath
     let quantity =  [1,5]
 
-    // CHANGE IT LATER!! -----------------------------------
-
-    let isLoggedIn = true
-    // loggedIn.subscribe((v) => {
-    //     isLoggedIn = v
-    //     if (!v) {
-    //         location.href = "/"
-    //     }
-    // })
+    let isLoggedIn = false
+    loggedIn.subscribe((v) => {
+        isLoggedIn = v
+        if (!v) {
+            location.href = "/"
+        }
+    })
 
     let form = {
         site_name : "",
