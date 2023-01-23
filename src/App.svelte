@@ -1,7 +1,7 @@
 <script>
   import Router from "svelte-spa-router";
   import { routes } from "./routes";
-  import {location} from 'svelte-spa-router'
+  import { location } from 'svelte-spa-router'
   import Header from "./components/Header.svelte";
   import Transition from "./components/Transition.svelte";
   import { onMount } from "svelte";
@@ -12,6 +12,7 @@
   $: status = 401;
   // auth validator
   onMount(async () => {
+      document.body.className = ""
        await fetch("https://api.floppa.host/auth/status", {
             credentials: "include"
         }).then((res)=>

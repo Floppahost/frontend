@@ -61,7 +61,7 @@
             {#each images as image}
                 <Card title={image.file_name}>
                     <div class="flex flex-col justify-center items-center">
-                        <img on:keydown={()=>window.open(`https://${image.file_url}`, "_blank")} on:click={()=>window.open(`https://${image.file_url}`, "_blank")} src="https://{image.file_url}" alt={image.file_name} class="w-56 py-4 h-auto" />
+                        <img on:keydown={()=>window.open(`https://${image.file_url}`, "_blank")} on:click={()=>window.open(`https://${image.file_url}`, "_blank")} src="https://{image.file_url}" alt={image.file_name} class="w-56 py-4 h-56" />
                         <div class="flex gap-4">
                             <button on:click={()=>deleteImage(image.upload_id)} class="ease-out duration-200 hover:px-6 px-4 py-1 rounded-lg bg-red-500 shadow-lg shadow-red-500/60">
                                 Delete
