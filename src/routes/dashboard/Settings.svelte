@@ -141,7 +141,22 @@
         domains.selected = data.data.domain;
         customPath = data.data.path;
         quantity[0] = data.data.path_amount;
-        paths.selected = data.data.path_mode;
+        switch (data.data.path_mode) {
+          case "emoji":
+            paths.selected = "Emojis";
+            break;
+          case "amongus":
+            paths.selected = "AmongUs";
+            break;
+          case "amongus_emoji":
+            paths.selected = "AmongUs + Emojis";
+            break;
+          case "custom":
+            paths.selected = "Custom";
+            break;
+          default:
+            paths.selected = "Random";
+        }
       })
     );
   });
