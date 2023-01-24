@@ -262,10 +262,6 @@
                 src="https://floppa.host/floppa.jpg"
                 alt="Embed preview"
               />
-              <span
-                class="hover:underline text-[#7e7f81] text-[0.8rem] font-[400]"
-                >{form.site_name}</span
-              >
             </div>
           {/if}
         </Card>
