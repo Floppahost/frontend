@@ -137,8 +137,13 @@
                   {#each invites as invite}
                     <tr class="border-b border-zinc-700">
                       <td
-                        on:keydown={() =>
-                          navigator.clipboard.writeText(invite.code)}
+                        on:keydown={() => {
+                          navigator.clipboard.writeText(invite.code);
+                          toast.push(
+                            "Invitation code has been copied to your clipboard",
+                            success
+                          );
+                        }}
                         on:click={() =>
                           navigator.clipboard.writeText(invite.code)}
                         class="hover:underline cursor-pointer hover:text-[#03e8fc] max-w-0 overflow-hidden whitespace-nowrap text-ellipsis px-6 py-3"
