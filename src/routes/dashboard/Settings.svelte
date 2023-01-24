@@ -167,7 +167,7 @@
     <div class="mx-auto mt-48">
       <p class="font-bold text-5xl mb-4">Settings</p>
       <div class="grid sm:grid-cols-2 grid-cols-1 gap-4 pb-12">
-        <Card title="Change embed">
+        <Card title="Change embed" additional={"h-[19.5rem]"}>
           <form
             method="post"
             class="grid grid-cols-1 mt-2"
@@ -233,22 +233,41 @@
             </button>
           </form>
         </Card>
-        <Card title="Embed preview" additional="h-min">
-            <div class="w-full max-w-sm rounded rounded-l-sm border-l-4 bg-[#2f3136] p-3 pl-4" style="border-color: #00FFFF">
-              <p class="mt-1 text-sm text-[#949599]">floppa.host</p>
-              <p class="mt-1 font-semibold text-white">Floppa baby</p>
-              <p class="mt-1 w-fit cursor-pointer font-semibold text-[#03e8fc] hover:underline">
-                get-floppa.png
+        <Card title="Embed preview" additional="h-min min-h-[19.5rem]">
+          {#if form.title === "" || form.author === ""}
+            <div class="h-[15rem] flex justify-center text-center items-center">
+              <span class="text-sm font-bold text-[#ff6363]"
+                >Embeds requires—at least—an author or a title.</span
+              >
+            </div>
+          {:else}
+            <div
+              class="w-full max-w-sm rounded rounded-l-sm border-l-4 bg-[#2f3136] p-3 pl-4"
+              style="border-color: {form.color === 'random'
+                ? '#fff'
+                : form.color}"
+            >
+              <p class="mt-1 text-sm text-[#949599]">{form.site_name}</p>
+              <p class="mt-1 font-semibold text-white">{form.author}</p>
+              <p
+                class="mt-1 w-fit cursor-pointer font-semibold text-[#03e8fc] hover:underline"
+              >
+                {form.title}
               </p>
               <p class="mt-1 text-sm text-gray-300">
-                Uploaded at 00.00.0000, 00:00:00 by Floppa.
+                {form.description}
               </p>
               <img
                 class="mt-2 max-h-[250px] w-full rounded object-cover pr-2"
                 src="https://floppa.host/floppa.jpg"
-                alt=""/>
-                <span class="hover:underline text-[#7e7f81] text-[0.8rem] font-[400]">{form.site_name}</span>
+                alt="Embed preview"
+              />
+              <span
+                class="hover:underline text-[#7e7f81] text-[0.8rem] font-[400]"
+                >{form.site_name}</span
+              >
             </div>
+          {/if}
         </Card>
         <Card title="Change path" additional="h-min">
           <select
