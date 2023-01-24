@@ -234,7 +234,6 @@
           </form>
         </Card>
         <Card title="Embed preview" additional="h-min">
-          <!-- <div class="flex justify-center items-center h-[15rem]"> -->
             <div class="w-full max-w-sm rounded rounded-l-sm border-l-4 bg-[#2f3136] p-3 pl-4" style="border-color: #00FFFF">
               <p class="mt-1 text-sm text-[#949599]">floppa.host</p>
               <p class="mt-1 font-semibold text-white">Floppa baby</p>
@@ -250,11 +249,6 @@
                 alt=""/>
                 <span class="hover:underline text-[#7e7f81] text-[0.8rem] font-[400]">{form.site_name}</span>
             </div>
-            <!-- <article class="px-4 flex border-l-[4px] rounded-[4px] bg-[#2f3136] border-red-500">
-            
-              <span class="hover:underline text-[#7e7f81] text-[0.8rem] font-[400]">{form.site_name}</span>
-            </article> -->
-          <!-- </div> -->
         </Card>
         <Card title="Change path" additional="h-min">
           <select

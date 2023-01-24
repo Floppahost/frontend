@@ -106,7 +106,7 @@
                         </thead>
                         <tbody>
                             <tr class="border-b border-zinc-700">
-                                <td class="px-6 py-3">123456</td>
+                                <td class="px-6 py-3">XXXX-XXXX-XXXX</td>
                                 <td class="px-6 py-3">Not used</td>
                             </tr>
                         </tbody>
