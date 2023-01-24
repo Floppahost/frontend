@@ -141,7 +141,7 @@
                           navigator.clipboard.writeText(invite.code)}
                         on:click={() =>
                           navigator.clipboard.writeText(invite.code)}
-                        class="hover:underline hover:text-[#03e8fc] max-w-0 overflow-hidden whitespace-nowrap text-ellipsis px-6 py-3"
+                        class="hover:underline cursor-pointer hover:text-[#03e8fc] max-w-0 overflow-hidden whitespace-nowrap text-ellipsis px-6 py-3"
                         >{invite.code}</td
                       >
                       <td
