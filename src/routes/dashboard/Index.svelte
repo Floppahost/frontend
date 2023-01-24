@@ -46,6 +46,7 @@
             toast.push("Config downloaded", success)
         }))
     }
+
     loggedIn.subscribe((v) => {
         isLoggedIn = v
         if (!v) {
@@ -94,7 +95,31 @@
                         </button>
                 </form>
             </Card>
-            <Card title="Download config" additional="h-min">
+            <Card title="Invites" additional="h-min">
+                <div class="relative mt-3 overflow-x-auto rounded-t-lg shadow-md">
+                    <table class="w-full text-left text-sm text-gray-500 dark:text-gray-400">
+                        <thead class="border-b border-zinc-700 bg-neutral-800 text-gray-400">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">Code</th>
+                                <th scope="col" class="px-6 py-3">Used by</th>
+                                <th scope="col" class="px-6 py-3">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-zinc-700">
+                                <td class="px-6 py-3">123456</td>
+                                <td class="px-6 py-3">Not used</td>
+                                <td class="px-6 py-3">
+                                    <button class="rounded p-1 px-3 transition hover:bg-darkM-700 bg-cyan-500 shadow-lg shadow-cyan-500/60 text-[#fff]">
+                                        Copy
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </Card>
+            <Card title="Config" additional="h-min">
                 <button on:click={downloadConfig} type="submit" class="w-full mt-4 px-4 py-px font-bold rounded-lg bg-cyan-500 shadow-lg shadow-cyan-500/60">
                     Download config
                 </button>

@@ -234,16 +234,27 @@
           </form>
         </Card>
         <Card title="Embed preview" additional="h-min">
-          <div class="flex justify-center items-center h-[15rem]">
-            <article
-              class="px-4 flex border-l-[4px] rounded-[4px] bg-[#2f3136] border-red-500"
-            >
-              <span
-                class="hover:underline text-[#7e7f81] text-[0.8rem] font-[400]"
-                >{form.site_name}</span
-              >
-            </article>
-          </div>
+          <!-- <div class="flex justify-center items-center h-[15rem]"> -->
+            <div class="w-full max-w-sm rounded rounded-l-sm border-l-4 bg-[#2f3136] p-3 pl-4" style="border-color: #00FFFF">
+              <p class="mt-1 text-sm text-[#949599]">floppa.host</p>
+              <p class="mt-1 font-semibold text-white">Floppa baby</p>
+              <p class="mt-1 w-fit cursor-pointer font-semibold text-[#03e8fc] hover:underline">
+                get-floppa.png
+              </p>
+              <p class="mt-1 text-sm text-gray-300">
+                Uploaded at 00.00.0000, 00:00:00 by Floppa.
+              </p>
+              <img
+                class="mt-2 max-h-[250px] w-full rounded object-cover pr-2"
+                src="https://floppa.host/floppa.jpg"
+                alt=""/>
+                <span class="hover:underline text-[#7e7f81] text-[0.8rem] font-[400]">{form.site_name}</span>
+            </div>
+            <!-- <article class="px-4 flex border-l-[4px] rounded-[4px] bg-[#2f3136] border-red-500">
+            
+              <span class="hover:underline text-[#7e7f81] text-[0.8rem] font-[400]">{form.site_name}</span>
+            </article> -->
+          <!-- </div> -->
         </Card>
         <Card title="Change path" additional="h-min">
           <select
