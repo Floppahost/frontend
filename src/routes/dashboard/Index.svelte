@@ -113,7 +113,7 @@
             </button>
           </form>
         </Card>
-        <Card title="Invites" additional={"h-[18rem]"}>
+        <Card title="Invites" additional={"h-[18rem] max-w-[22rem]"}>
           <div class="overflow-y-auto mt-3 h-[12rem] rounded-t-lg">
             {#if invites.length === 0}
               <div class="flex h-full justify-center items-center">
@@ -136,8 +136,12 @@
                 <tbody>
                   {#each invites as invite}
                     <tr class="border-b border-zinc-700">
-                      <td class="px-6 py-3">{invite.code}</td>
-                      <td class="px-6 py-3"
+                      <td
+                        class="max-w-0 overflow-hidden whitespace-nowrap text-ellipsis px-6 py-3"
+                        >{invite.code}</td
+                      >
+                      <td
+                        class="max-w-0 overflow-hidden whitespace-nowrap text-ellipsis px-6 py-3"
                         >{invite.username === null
                           ? "Not used"
                           : invite.username}</td
