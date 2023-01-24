@@ -144,8 +144,13 @@
                             success
                           );
                         }}
-                        on:click={() =>
-                          navigator.clipboard.writeText(invite.code)}
+                        on:click={() => {
+                          navigator.clipboard.writeText(invite.code);
+                          toast.push(
+                            "Invitation code has been copied to your clipboard",
+                            success
+                          );
+                        }}
                         class="hover:underline cursor-pointer hover:text-[#03e8fc] max-w-0 overflow-hidden whitespace-nowrap text-ellipsis px-6 py-3"
                         >{invite.code}</td
                       >
